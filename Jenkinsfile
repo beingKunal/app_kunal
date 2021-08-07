@@ -19,6 +19,7 @@ pipeline {
 stages {
   stage('Start') {
     steps {
+      echo "Checking out git repo"
       checkout scm
           script {
             docker_port: 7200
