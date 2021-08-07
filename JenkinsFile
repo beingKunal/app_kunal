@@ -20,13 +20,6 @@ stages {
   stage('Start') {
     steps {
       checkout scm
-      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-      checkout([$class: 'GITSCM', branches: [
-            [name: '*/master']
-          ], userRemoteConfigs: [
-            [credentialsId: 'GitHub', url: 'https://github.com/beingKunal/app_kunal.git']
-          ],
-          -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
           script {
             docker_port: 7200
             properties = readProperties file: 'user.properties'
