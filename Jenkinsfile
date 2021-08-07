@@ -37,7 +37,7 @@ stages {
       stage('Start SonarQube Analysis') {
         steps {
           echo "Start sonarQube Analysis Step"
-          withSonarQube('Test_Sonar') {
+          withSonarQubeEnv('Test_Sonar') {
             bat "${scannerHome}\\SonarScanner.MSBUILD.exe begin /k:sonar-Kunal /n:sonar-Kunal /v:1.0"
 
           }
