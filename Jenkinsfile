@@ -65,7 +65,7 @@ stages {
         steps {
           echo "Docker image step"
           bat 'dotnet publish -c Release'
-          bat "docker build -t i_${username}_master:${BUIld_NUMBER} --no-cache -f DockerFile ."
+          bat "docker build -t i_${username}_master:${BUIld_NUMBER} --no-cache -f Dockerfile ."
         }
       }
       stage('Move Image to docker hub'){
