@@ -21,15 +21,15 @@ stages {
     steps {
       echo "Checking out git repo"
       checkout scm
-          script {
-            docker_port: 7200
-            properties = readProperties file: 'user.properties'
-          }
+//           script {
+//             docker_port: 7200
+//             properties = readProperties file: 'user.properties'
+//           }
         }
       }
       stage('nuget restore') {
         steps {
-          echo "Running Build ${JOB_NAME} # ${BUILD_NUMBER} for ${properties['user.employeeid']} with docker as ${docker_port}"
+//           echo "Running Build ${JOB_NAME} # ${BUILD_NUMBER} for ${properties['user.employeeid']} with docker as ${docker_port}"
           echo "Nuget Restore step"
           bat "dotnet restore"
         }
