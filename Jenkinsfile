@@ -31,7 +31,7 @@ stages {
         steps {
           echo "Running Build ${JOB_NAME} # ${BUILD_NUMBER} for ${properties['user.employeeid']} with docker as ${docker_port}"
           echo "Nuget Restore step"
-          bat dotnet restore
+          bat "dotnet restore"
         }
       }
       stage('Start SonarQube Analysis') {
@@ -46,7 +46,7 @@ stages {
       stage('Code Build') {
         steps {
           echo "Clean Previous Build"
-          bat "dotnet Clean"
+          bat "dotnet clean"
 
           // Build the project and all its dependencies
           echo "Code Build"
