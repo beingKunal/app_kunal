@@ -38,7 +38,7 @@ stages {
         steps {
           echo "Start sonarQube Analysis Step"
           withSonarQubeEnv('Test_Sonar') {
-            bat "${scannerHome}\\SonarQube.Scanner.MSBuild.exe begin /k:sonar_Kunal /n:sonar_Kunal /v:1.0"
+            bat "${scannerHome}\\SonarScanner.MSBuild.exe begin /k:sonar_Kunal /n:sonar_Kunal /v:1.0"
 
           }
         }
@@ -57,7 +57,7 @@ stages {
         steps {
           echo "Stop sonarQube analysis"
           withSonarQubeEnv('Test_Sonar') {
-            bat "${scannerHome}\\SonarQube.Scanner.MSBuild.exe end"
+            bat "${scannerHome}\\SonarScanner.MSBuild.exe end"
           }
         }
       }
